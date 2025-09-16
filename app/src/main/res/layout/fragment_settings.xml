@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- واجهة شاشة الإعدادات: خيارات اللغة، الثيم، وزر الإشعار -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- خيار اللغة -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lang_label"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"/>
+
+        <RadioGroup
+            android:id="@+id/radio_lang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/radio_en"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lang_english"/>
+            <RadioButton
+                android:id="@+id/radio_ar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lang_arabic"/>
+        </RadioGroup>
+
+        <!-- خيار الثيم -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/theme_label"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <com.oneuiproject.sesl.widget.SeslSwitch
+            android:id="@+id/switch_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textOn="@string/dark_mode_label"
+            android:textOff="@string/light_mode_label"
+            android:paddingTop="8dp"/>
+
+        <!-- زر اختبار الإشعار -->
+        <Button
+            android:id="@+id/button_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/test_notification_button"
+            android:layout_marginTop="24dp"/>
+    </LinearLayout>
+</ScrollView>
