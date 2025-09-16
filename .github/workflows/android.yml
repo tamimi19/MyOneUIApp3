@@ -24,14 +24,14 @@ jobs:
       - name: Clear possibly corrupt Gradle cache
         run: rm -rf ~/.gradle/caches/jars-9 || true
 
-      - name: Download Gradle 7.5.1 temporarily
-        run: wget https://services.gradle.org/distributions/gradle-7.5.1-bin.zip -O gradle-7.5.1-bin.zip
+      - name: Download Gradle 8.14.3 temporarily
+        run: wget https://services.gradle.org/distributions/gradle-8.14.3-bin.zip -O gradle-8.14.3-bin.zip
 
       - name: Unzip temporary Gradle
-        run: unzip -q gradle-7.5.1-bin.zip
+        run: unzip -q gradle-8.14.3-bin.zip
 
       - name: Generate Gradle Wrapper
-        run: ./gradle-7.5.1/bin/gradle wrapper --gradle-version 7.5.1 --distribution-type all
+        run: ./gradle-8.14.3/bin/gradle wrapper --gradle-version 8.14.3 --distribution-type all
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
