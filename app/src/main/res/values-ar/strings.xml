@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">تطبيق One UI</string>
+    <string name="drawer_scroll">شاشة التمرير</string>
+    <string name="drawer_settings">الإعدادات</string>
+    <string name="lang_label">اللغة:</string>
+    <string name="lang_english">English</string>
+    <string name="lang_arabic">العربية</string>
+    <string name="theme_label">الثيم:</string>
+    <string name="dark_mode_label">الوضع الليلي</string>
+    <string name="light_mode_label">الوضع النهاري</string>
+    <string name="test_notification_button">اختبار الإشعار</string>
+    <string name="notification_title">إشعار تجريبي</string>
+    <string name="notification_content">هذا إشعار تجريبي من التطبيق.</string>
+</resources>
