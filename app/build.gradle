@@ -39,5 +39,6 @@ dependencies {
     implementation 'io.github.oneuiproject.sesl:drawerlayout:1.0.0'
     implementation 'io.github.oneuiproject.sesl:recyclerview:1.4.1'
     implementation 'io.github.oneuiproject.sesl:preference:1.1.0'
-    implementation 'io.github.oneuiproject:design:1.2.6'
+    // تم حذف السطر التالي لأنه قديم ومتعارض
+    // implementation 'io.github.oneuiproject:design:1.2.6'
 }
