@@ -5,10 +5,10 @@ import android.view.View;
 import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout; // تم التعديل هنا
 import androidx.fragment.app.Fragment;
-import com.oneuiproject.sesl.appbar.CollapsingToolbarLayout; // مكتبة OneUI
-import com.oneuiproject.sesl.appbar.MaterialToolbar;
-import com.oneuiproject.sesl.drawerlayout.DrawerLayout;
+import com.google.android.material.appbar.CollapsingToolbarLayout; // تم التعديل هنا
+import com.google.android.material.appbar.MaterialToolbar; // تم التعديل هنا
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
