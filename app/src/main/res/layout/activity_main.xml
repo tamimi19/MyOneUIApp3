@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.oneuiproject.sesl.drawerlayout.DrawerLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- الهيكل الرئيسي مع CoordinatorLayout و CollapsingToolbarLayout -->
+    <com.oneuiproject.sesl.coordinatorlayout.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.oneuiproject.sesl.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- CollapsingToolbarLayout مع تفعيل التكبير onExpand -->
+            <com.oneuiproject.sesl.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                app:seslExpandedTitleEnabled="true"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <!-- ToolBar من OneUI -->
+                <com.oneuiproject.sesl.appbar.MaterialToolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    app:layout_collapseMode="pin" />
+            </com.oneuiproject.sesl.appbar.CollapsingToolbarLayout>
+
+        </com.oneuiproject.sesl.appbar.AppBarLayout>
+
+        <!-- حاوية الفراجمنتات -->
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+
+    </com.oneuiproject.sesl.coordinatorlayout.CoordinatorLayout>
+
+    <!-- قائمة السحب (الدروار) -->
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:orientation="vertical"
+        android:background="@android:color/white">
+
+        <!-- زر/عنصر: شاشة التمرير -->
+        <LinearLayout
+            android:id="@+id/drawer_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_sort_by_size"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/drawer_scroll"/>
+        </LinearLayout>
+
+        <!-- زر/عنصر: شاشة الإعدادات -->
+        <LinearLayout
+            android:id="@+id/drawer_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:drawable/ic_menu_manage"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/drawer_settings"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.oneuiproject.sesl.drawerlayout.DrawerLayout>
