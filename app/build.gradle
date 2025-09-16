@@ -42,5 +42,5 @@ dependencies {
     implementation 'io.github.oneuiproject.sesl:drawerlayout:1.0.0'
     implementation 'io.github.oneuiproject.sesl:recyclerview:1.4.1'
     implementation 'io.github.oneuiproject.sesl:preference:1.1.0'
-    // implementation 'io.github.oneuiproject:design:1.2.6' // هذه المكتبة للتصميم وليست للمكونات البرمجية الأساسية
+    implementation 'io.github.oneuiproject:design:1.2.6'
 }
