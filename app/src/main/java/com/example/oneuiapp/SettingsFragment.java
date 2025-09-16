@@ -9,12 +9,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton; // تم إضافة هذا الاستيراد
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
-import com.oneuiproject.sesl.widget.SeslSwitch; // مفتاح تبديل من OneUI Core
+import com.samsung.android.widget.SeslSwitch; // تم تصحيح مسار الاستيراد
 import androidx.core.app.NotificationCompat;
 
 // فراجمنت شاشة الإعدادات
@@ -40,7 +41,7 @@ public class SettingsFragment extends Fragment {
         langEnglish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // تعيين اللغة إلى الإنجليزية ثم إعادة إنشاء النشاط لتطبيق التغيير6
+                // تعيين اللغة إلى الإنجليزية ثم إعادة إنشاء النشاط لتطبيق التغيير
                 LocaleHelper.setLocale(getContext(), "en");
                 getActivity().recreate();
             }
@@ -56,9 +57,10 @@ public class SettingsFragment extends Fragment {
         });
 
         // تغيير الثيم بدون إعادة تشغيل التطبيق (تغيير الوضع الليلي)
-        themeSwitch.setOnCheckedChangeListener(new SeslSwitch.OnCheckedChangeListener() {
+        // تم استخدام المستمع الصحيح هنا
+        themeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onCheckedChanged(SeslSwitch seslSwitch, boolean isChecked) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // الوضع الليلي
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -91,10 +93,10 @@ public class SettingsFragment extends Fragment {
             nm.createNotificationChannel(channel);
         }
         NotificationCompat.Builder builder = new NotificationCompat.Builder(ctx, channelId)
-            .setSmallIcon(android.R.drawable.ic_dialog_info)
-            .setContentTitle(getString(R.string.notification_title))
-            .setContentText(getString(R.string.notification_content))
-            .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+                .setSmallIcon(android.R.drawable.ic_dialog_info)
+                .setContentTitle(getString(R.string.notification_title))
+                .setContentText(getString(R.string.notification_content))
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
         nm.notify(123, builder.build());
     }
 }
