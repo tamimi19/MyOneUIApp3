@@ -32,6 +32,9 @@ configurations.all {
 }
 
 dependencies {
+    // تم إضافة المكتبة الأساسية المفقودة
+    implementation 'io.github.oneuiproject:oneui-core:1.2.0' // تمت إضافة هذا السطر
+
     // اعتماد مكتبات OneUI Core و OneUI Design
     implementation 'io.github.oneuiproject.sesl:appcompat:1.4.0'
     implementation 'io.github.oneuiproject.sesl:material:1.5.0'
@@ -39,5 +42,5 @@ dependencies {
     implementation 'io.github.oneuiproject.sesl:drawerlayout:1.0.0'
     implementation 'io.github.oneuiproject.sesl:recyclerview:1.4.1'
     implementation 'io.github.oneuiproject.sesl:preference:1.1.0'
-    implementation 'io.github.oneuiproject:design:1.2.6'
+    // implementation 'io.github.oneuiproject:design:1.2.6' // هذه المكتبة للتصميم وليست للمكونات البرمجية الأساسية
 }
