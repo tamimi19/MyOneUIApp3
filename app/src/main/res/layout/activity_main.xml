@@ -23,7 +23,7 @@
                 android:fitsSystemWindows="true"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-                <!-- ToolBar من OneUI -->
+                <!-- Toolbar من OneUI -->
                 <com.oneuiproject.sesl.appbar.MaterialToolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
@@ -45,6 +45,7 @@
 
     <!-- قائمة السحب (الدروار) -->
     <LinearLayout
+        android:id="@+id/drawer_container"
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
