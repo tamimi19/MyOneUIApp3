@@ -1,0 +1,6 @@
+<resources>
+    <!-- ألوان التطبيق الأساسية -->
+    <color name="colorPrimary">#1E88E5</color>
+    <color name="colorPrimaryDark">#1565C0</color>
+    <color name="colorAccent">#E040FB</color>
+</resources>
