@@ -25,13 +25,13 @@ jobs:
         run: rm -rf ~/.gradle/caches/jars-9 || true
 
       - name: Download Gradle 7.5.1 temporarily
-        run: wget https://services.gradle.org/distributions/gradle-7.5.1-all.zip -O gradle-7.5.1-all.zip
+        run: wget https://services.gradle.org/distributions/gradle-7.5.1-bin.zip -O gradle-7.5.1-bin.zip
 
       - name: Unzip temporary Gradle
-        run: unzip -q gradle-7.5.1-all.zip
+        run: unzip -q gradle-7.5.1-bin.zip
 
       - name: Generate Gradle Wrapper
-        run: ./gradle-7.5.1/all/gradle wrapper --gradle-version 7.5.1 --distribution-type all
+        run: ./gradle-7.5.1/bin/gradle wrapper --gradle-version 7.5.1 --distribution-type all
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
