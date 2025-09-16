@@ -14,7 +14,7 @@ import android.widget.RadioGroup;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
-import com.samsung.android.ui.widget.SeslSwitchBar; // تم تصحيح مسار الاستيراد
+import com.samsung.android.settings.widget.SeslSwitchBar; // تم تصحيح مسار الاستيراد
 import androidx.core.app.NotificationCompat;
 
 // فراجمنت شاشة الإعدادات
