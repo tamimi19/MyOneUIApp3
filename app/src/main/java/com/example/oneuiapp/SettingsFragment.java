@@ -9,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton; // استيراد CompoundButton
+import android.widget.RadioGroup;    // استيراد RadioGroup من المكون الأساسي (One UI)
+import android.widget.RadioButton;   // استيراد RadioButton من المكون الأساسي (One UI)
+import android.widget.Button;        // استيراد Button من المكون الأساسي (One UI)
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.SwitchCompat; // استيراد SwitchCompat
