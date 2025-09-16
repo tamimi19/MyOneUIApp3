@@ -5,72 +5,72 @@ import android.view.View;
 import android.widget.LinearLayout;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.drawerlayout.widget.DrawerLayout; // تم التعديل هنا
 import androidx.fragment.app.Fragment;
-import com.google.android.material.appbar.CollapsingToolbarLayout; // تم التعديل هنا
-import com.google.android.material.appbar.MaterialToolbar; // تم التعديل هنا
+import com.oneuiproject.sesl.drawerlayout.DrawerLayout;
+import com.oneuiproject.sesl.appbar.CollapsingToolbarLayout;
+import com.oneuiproject.sesl.appbar.MaterialToolbar;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout drawerLayout;
-    private LinearLayout drawerScroll, drawerSettings;
+    private LinearLayout drawerContainer, drawerScroll, drawerSettings;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    @Override  
+    protected void onCreate(@Nullable Bundle savedInstanceState) {  
+        super.onCreate(savedInstanceState);  
+        setContentView(R.layout.activity_main);  
 
-        // تعيين الواجهة إلى التخطيط الرئيسي الذي يحتوي على DrawerLayout
-        setContentView(R.layout.activity_main);
-
-        // الوصول إلى مكونات الواجهة من XML
-        drawerLayout = findViewById(R.id.drawer_layout);
-        drawerScroll = findViewById(R.id.drawer_scroll);
-        drawerSettings = findViewById(R.id.drawer_settings);
+        // الحصول على مكونات الواجهة من XML
+        drawerLayout = findViewById(R.id.drawer_layout);  
+        drawerContainer = findViewById(R.id.drawer_container); // الحاوية الرئيسية للقائمة
+        drawerScroll = findViewById(R.id.drawer_scroll);  
+        drawerSettings = findViewById(R.id.drawer_settings);  
 
         // تعيين عنوان الشاشة في CollapsingToolbarLayout
-        CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.collapsing_toolbar);
-        collapsingToolbar.setTitle(getString(R.string.app_name));
+        CollapsingToolbarLayout collapsingToolbar = findViewById(R.id.collapsing_toolbar);  
+        collapsingToolbar.setTitle(getString(R.string.app_name));  
 
-        // زر قائمة (يمكنك إضافة أيقونة هنا)
-        MaterialToolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        // تفعيل شريط القائمة لفتح وإغلاق الـ Drawer
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawerLayout.openDrawer(drawerScroll); // يفتح القائمة
-            }
-        });
+        // إعداد شريط الأدوات (Toolbar)
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);  
+        setSupportActionBar(toolbar);  
+        // إذا رغبت بإضافة أيقونة للقائمة الجانبية:
+        // toolbar.setNavigationIcon(android.R.drawable.ic_menu_sort_by_size);
 
-        // عند الضغط على "شاشة التمرير"
-        drawerScroll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // عرض الفراجمنت الخاص بالتمرير
-                openFragment(new ScrollFragment());
-                drawerLayout.closeDrawers();
-            }
-        });
+        // عند الضغط على أيقونة القائمة، نفتح اللوحة الجانبية (الدروار)
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {  
+            @Override  
+            public void onClick(View view) {  
+                drawerLayout.openDrawer(drawerContainer); // فتح الحاوية التي فيها عناصر القائمة
+            }  
+        });  
 
-        // عند الضغط على "شاشة الإعدادات"
-        drawerSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                openFragment(new SettingsFragment());
-                drawerLayout.closeDrawers();
-            }
-        });
+        // إعداد استجابة الضغط على عناصر القائمة
+        drawerScroll.setOnClickListener(new View.OnClickListener() {  
+            @Override  
+            public void onClick(View view) {  
+                openFragment(new ScrollFragment());  
+                drawerLayout.closeDrawers();  
+            }  
+        });  
 
-        // نبدأ بعرض شاشة التمرير بشكل افتراضي
-        if (savedInstanceState == null) {
-            openFragment(new ScrollFragment());
-        }
-    }
+        drawerSettings.setOnClickListener(new View.OnClickListener() {  
+            @Override  
+            public void onClick(View view) {  
+                openFragment(new SettingsFragment());  
+                drawerLayout.closeDrawers();  
+            }  
+        });  
+
+        // بدء عرض شاشة التمرير بشكل افتراضي عند فتح التطبيق
+        if (savedInstanceState == null) {  
+            openFragment(new ScrollFragment());  
+        }  
+    }  
 
     // طريقة مساعدة لعرض الفراجمنت المطلوب في الحاوية
-    private void openFragment(Fragment fragment) {
-        getSupportFragmentManager()
-            .beginTransaction()
-            .replace(R.id.fragment_container, fragment)
-            .commit();
+    private void openFragment(Fragment fragment) {  
+        getSupportFragmentManager()  
+            .beginTransaction()  
+            .replace(R.id.fragment_container, fragment)  
+            .commit();  
     }
 }
