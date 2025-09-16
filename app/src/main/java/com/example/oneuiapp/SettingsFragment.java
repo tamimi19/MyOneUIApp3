@@ -8,20 +8,18 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.CompoundButton; // استيراد CompoundButton
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat; // استيراد SwitchCompat
 import androidx.fragment.app.Fragment;
-import com.samsung.android.settings.widget.SeslSwitchBar; // تم تصحيح مسار الاستيراد
 import androidx.core.app.NotificationCompat;
 
 // فراجمنت شاشة الإعدادات
 public class SettingsFragment extends Fragment {
     private RadioGroup langGroup;
     private RadioButton langEnglish, langArabic;
-    private SeslSwitchBar themeSwitch;
+    private SwitchCompat themeSwitch; // استخدام SwitchCompat بدلاً من SeslSwitchBar
     private Button notificationButton;
 
     @Override
@@ -56,10 +54,9 @@ public class SettingsFragment extends Fragment {
         });
 
         // تغيير الثيم بدون إعادة تشغيل التطبيق (تغيير الوضع الليلي)
-        // تم استخدام المستمع الصحيح هنا
-        themeSwitch.setOnSwitchChangeListener(new SeslSwitchBar.OnSwitchChangeListener() {
+        themeSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onSwitchChanged(SeslSwitchBar switchView, boolean isChecked) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     // الوضع الليلي
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
