@@ -33,7 +33,7 @@ configurations.all {
 
 dependencies {
     // تم إضافة المكتبة الأساسية المفقودة
-    implementation 'io.github.oneuiproject:oneui-core:1.2.0' // تمت إضافة هذا السطر
+    implementation 'io.github.oneuiproject.sesl:core:1.2.0'
 
     // اعتماد مكتبات OneUI Core و OneUI Design
     implementation 'io.github.oneuiproject.sesl:appcompat:1.4.0'
